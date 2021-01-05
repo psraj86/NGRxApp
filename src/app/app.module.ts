@@ -19,6 +19,8 @@ import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { environment } from '../environments/environment';
     UsersComponent,
     ViewUserComponent,
     UserCardComponent,
-    UserListComponent
+    UserListComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
     FlexModule,

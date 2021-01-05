@@ -4,8 +4,8 @@
   </mat-card-header>
   <mat-card-content> {{user.email}} </mat-card-content>
    <mat-card-actions align="start">
-    <button mat-raised-button color="primary">Update</button>
-    <button mat-raised-button color="warn">Delete</button>
+    <button mat-raised-button color="primary" (click)="update()">Update</button>
+    <button mat-raised-button color="warn" (click)="delete(user.id)">Delete</button>
   </mat-card-actions>
   <!--<mat-card-footer> Footer </mat-card-footer> -->
 </mat-card>

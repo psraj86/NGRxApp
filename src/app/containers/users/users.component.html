@@ -6,4 +6,5 @@
     <span>Error Ocurred</span>
     <button mat-raised-button color="warn" on-click="tryAgain()">Try Again</button>
   </div>
+  <button *ngIf="!loading && !error" mat-raised-button color="primary" (click)="addUser()">Add User</button>
 </div>

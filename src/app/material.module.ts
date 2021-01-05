@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const modules = [
   MatToolbarModule,
@@ -16,6 +17,8 @@ const modules = [
   MatIconModule,
   MatCardModule,
   MatProgressSpinnerModule,
+  MatDialogModule
+
 ];
 @NgModule({
   declarations: [],

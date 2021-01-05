@@ -49,4 +49,18 @@ export class ApiRepositoryService {
       });
     return [loading$, getUsers$, getError$];
   }
+
+  deleteUser(id: number) {
+    // first we will call actual delete api.
+    this.store.dispatch(new fromUserAction.UserListDeleteAction({ id }));
+  }
+
+  updateUser(data: User) {
+    // first send details to actual API
+    this.store.dispatch(new fromUserAction.UserUpdateAction({ data }));
+  }
+
+  addUser(data: User) {
+    this.store.dispatch(new fromUserAction.UserAddAction({ data }));
+  }
 }

@@ -19,6 +19,7 @@ export function userReducer(
   state = initialState,
   action: Action
 ): UserReducerState {
+  console.log('Action Type ', action.type);
   switch (action.type) {
     case fromUserAction.UserActions.USER_LIST_REQUEST:
       return { ...state, loading: true, error: false };
@@ -31,9 +32,20 @@ export function userReducer(
         loading: false,
         users: updatedUsers,
       };
+    case fromUserAction.UserActions.USER_DELETE:
+      const users = state.users.filter((user) => user.id !== action.payload.id);
+      return { ...state, ...{ users } };
+    case fromUserAction.UserActions.USER_UPDATE:
+      const usersList = state.users.filter(
+        (user) => user.id !== action.payload.data.id
+      );
+      const updatedUser = usersList.concat(action.payload.data);
+      return { ...state, ...{ users: updatedUser } };
     case fromUserAction.UserActions.USER_LIST_ERROR:
-      console.log('Called from here...');
       return { ...state, error: true, loading: false };
+    case fromUserAction.UserActions.USER_ADD:
+      const addedUser = state.users.concat(action.payload.data);
+      return { ...state, ...{ users: addedUser } };
     default:
       return state;
   }

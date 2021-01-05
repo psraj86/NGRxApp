@@ -1,3 +1,5 @@
+import { UpdateUserComponent } from './../../components/update-user/update-user.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { ApiRepositoryService } from 'src/app/services/api-repository.service';
@@ -11,7 +13,10 @@ export class UsersComponent implements OnInit {
   users: User[] = [];
   loading = false;
   error: boolean;
-  constructor(private apiRepositoryService: ApiRepositoryService) {}
+  constructor(
+    private apiRepositoryService: ApiRepositoryService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.fetchData();
@@ -35,5 +40,11 @@ export class UsersComponent implements OnInit {
 
   tryAgain() {
     this.apiRepositoryService.getUserList(true);
+  }
+
+  addUser() {
+    this.dialog.open(UpdateUserComponent, {
+      width: '256px',
+    });
   }
 }
