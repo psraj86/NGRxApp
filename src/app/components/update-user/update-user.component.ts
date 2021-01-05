@@ -21,7 +21,6 @@ export class UpdateUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.userForm = this.fb.group({
       email: [this.data ? this.data.email : null, [Validators.required]],
       name: [this.data ? this.data.name : null, [Validators.required]],
@@ -42,6 +41,7 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateUser() {
+    console.log('praveen SIngh');
     const updatedUser: User = { ...this.data, ...this.userForm.value };
     this.apiRepositoryService.updateUser(updatedUser);
     this.dialogRef.close();
