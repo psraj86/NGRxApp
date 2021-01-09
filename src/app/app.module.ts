@@ -21,6 +21,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { PostCardComponent } from './components/post-card/post-card.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ViewUserComponent,
     UserCardComponent,
     UserListComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    PostListComponent,
+    PostCardComponent
   ],
   imports: [
     BrowserModule,
